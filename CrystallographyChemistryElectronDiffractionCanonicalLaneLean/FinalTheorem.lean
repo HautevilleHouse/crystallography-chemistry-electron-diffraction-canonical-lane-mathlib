@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import CrystallographyChemistryElectronDiffractionCanonicalLaneLean.CrystalLatticeSystems
+import CrystallographyChemistryElectronDiffractionCanonicalLaneLean.XRayDiffractionTheory
+import CrystallographyChemistryElectronDiffractionCanonicalLaneLean.ElectronDiffractionPattern
+import CrystallographyChemistryElectronDiffractionCanonicalLaneLean.QuasicrystalOrder
+
+namespace HautevilleHouse
+namespace CrystallographyChemistryElectronDiffractionCanonicalLaneLean
+
+def ConstrainedCrystallographyClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_crystallography_endgame (A : AdmissibleClass) :
+    ConstrainedCrystallographyClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CrystallographyChemistryElectronDiffractionCanonicalLaneLean
+end HautevilleHouse
